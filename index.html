@@ -15,11 +15,11 @@
 
   <style>
     :root {
-      --background: #ffffff;
-      --soft: #f5f5f2;
-      --text: #30372f;
-      --muted: #70766e;
-      --line: #e5e7e1;
+      --white: #ffffff;
+      --soft: #f5f5f1;
+      --ink: #30372f;
+      --muted: #6c7369;
+      --line: #e3e6df;
       --serif: Georgia, "Times New Roman", serif;
       --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -28,15 +28,19 @@
       box-sizing: border-box;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 30px;
+      scroll-padding-top: 28px;
     }
 
     body {
       margin: 0;
-      color: var(--text);
-      background: var(--background);
+      background: var(--white);
+      color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
     }
@@ -61,12 +65,12 @@
 
     a:focus-visible,
     button:focus-visible {
-      outline: 2px solid #819477;
+      outline: 3px solid #8a9a7c;
       outline-offset: 6px;
     }
 
     ::selection {
-      background: #dfe5d9;
+      background: #dfe5d8;
     }
 
     .site-header {
@@ -76,20 +80,15 @@
       gap: 24px;
       max-width: 1600px;
       margin: auto;
-      padding: 26px 5%;
-    }
-
-    .header-note,
-    .navigation a {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      padding: 28px 5%;
     }
 
     .header-note {
       margin: 0;
       color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .brand {
@@ -97,7 +96,6 @@
       flex-direction: column;
       align-items: center;
       gap: 7px;
-      text-align: center;
     }
 
     .brand-name {
@@ -105,6 +103,7 @@
       font-weight: 600;
       letter-spacing: 3px;
       line-height: 1.5;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -113,35 +112,36 @@
       font-family: var(--serif);
       font-size: 13px;
       font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0.3px;
     }
 
     .navigation {
       display: flex;
       justify-content: flex-end;
-      gap: 24px;
+      gap: 25px;
     }
 
     .navigation a {
       color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     .navigation a:hover {
-      color: var(--text);
+      color: var(--ink);
     }
 
     .hero {
       position: relative;
       display: grid;
       place-items: center;
-      min-height: 520px;
-      height: 76vh;
-      height: 76svh;
+      min-height: 500px;
+      height: 75vh;
+      height: 75svh;
       max-height: 900px;
       margin: 0 22px;
       overflow: hidden;
-      background: #727e70;
+      background: #74806e;
       color: white;
       text-align: center;
     }
@@ -151,45 +151,48 @@
       inset: 0;
       height: 100%;
       object-fit: cover;
-      object-position: center;
     }
 
     .hero::after {
       position: absolute;
       inset: 0;
       content: "";
-      background: rgba(12, 24, 17, 0.36);
+      background: rgba(15, 25, 17, 0.35);
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 50px 24px;
+      padding: 45px 24px;
     }
 
     .eyebrow {
       margin: 0 0 22px;
       font-size: 9px;
-      font-weight: 500;
       letter-spacing: 2.5px;
       line-height: 1.8;
       text-transform: uppercase;
     }
 
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
     h1 {
       margin: 0;
-      font-family: var(--serif);
       font-size: clamp(48px, 6.8vw, 100px);
-      font-weight: 400;
       letter-spacing: -0.05em;
-      line-height: 1.03;
+      line-height: 1.04;
     }
 
     .hero-description {
       margin: 24px 0 30px;
       font-size: 12px;
-      letter-spacing: 0.5px;
       line-height: 1.8;
+      letter-spacing: 0.4px;
     }
 
     .button {
@@ -197,7 +200,7 @@
       padding: 15px 24px;
       border: 1px solid white;
       background: white;
-      color: var(--text);
+      color: var(--ink);
       font-size: 9px;
       letter-spacing: 2px;
       line-height: 1.4;
@@ -212,88 +215,112 @@
       color: white;
     }
 
-    .intro {
-      max-width: 760px;
+    .collections-section {
+      max-width: 1240px;
       margin: auto;
-      padding: 90px 25px 80px;
+      padding: 90px 6% 110px;
+    }
+
+    .section-intro {
+      margin-bottom: 55px;
       text-align: center;
     }
 
-    .intro .eyebrow {
+    .section-intro .eyebrow {
       color: var(--muted);
     }
 
     h2 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(35px, 4.5vw, 58px);
-      font-weight: 400;
+      font-size: clamp(36px, 4.5vw, 60px);
       letter-spacing: -0.045em;
       line-height: 1.15;
     }
 
-    .intro p:last-child {
-      margin: 23px 0 0;
+    .section-description {
+      margin: 20px 0 0;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.9;
     }
 
-    .gallery-section {
-      max-width: 1280px;
-      margin: auto;
-      padding: 0 6% 100px;
-    }
-
-    .gallery {
+    .collections {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: start;
       gap: 32px;
     }
 
-    .photo {
-      display: block;
-      width: 100%;
+    .collection-card {
+      position: relative;
+      display: grid;
+      place-items: center;
       aspect-ratio: 4 / 5;
-      padding: 0;
-      border: 0;
       overflow: hidden;
-      background: var(--soft);
-      cursor: zoom-in;
-      -webkit-tap-highlight-color: transparent;
+      background: #727d6d;
+      color: white;
+      text-align: center;
+      isolation: isolate;
     }
 
-    .photo img {
+    .collection-card:nth-child(2) {
+      margin-top: 85px;
+    }
+
+    .collection-card:nth-child(3) {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 8;
+      margin-top: 15px;
+    }
+
+    .collection-card img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
       height: 100%;
       object-fit: cover;
       transition: transform 700ms ease;
     }
 
-    .photo:nth-child(2) {
-      margin-top: 100px;
+    .collection-card::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: rgba(10, 21, 13, 0.33);
+      transition: background 300ms ease;
     }
 
-    .photo:nth-child(3) {
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 9;
-      margin: 20px 0;
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
     }
 
-    .photo:nth-child(5) {
-      margin-top: 80px;
+    .card-title {
+      margin: 0;
+      font-size: clamp(38px, 4.6vw, 68px);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
     }
 
-    .photo:nth-child(6) {
-      grid-column: 1 / -1;
-      width: 72%;
-      aspect-ratio: 3 / 2;
-      margin: 25px auto 0;
+    .card-link {
+      margin-top: 22px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     @media (hover: hover) {
-      .photo:hover img {
-        transform: scale(1.035);
+      .collection-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .collection-card:hover::after {
+        background: rgba(10, 21, 13, 0.22);
       }
     }
 
@@ -305,20 +332,19 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 80px;
-      max-width: 1120px;
+      gap: 75px;
+      max-width: 1100px;
       margin: auto;
       padding: 80px 6%;
     }
 
     .about-image {
-      height: 460px;
+      height: 450px;
       object-fit: cover;
     }
 
     .about-copy {
       max-width: 360px;
-      padding: 20px 0;
     }
 
     .about-copy .eyebrow {
@@ -330,7 +356,7 @@
     }
 
     .about-copy p:not(.eyebrow) {
-      margin: 25px 0 0;
+      margin: 24px 0 0;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.95;
@@ -345,27 +371,87 @@
     }
 
     .closing {
-      padding: 85px 24px;
+      padding: 80px 24px;
       text-align: center;
     }
 
     .closing p {
       margin: 0;
       font-family: var(--serif);
-      font-size: clamp(25px, 3vw, 39px);
+      font-size: clamp(26px, 3vw, 39px);
       letter-spacing: -0.03em;
-      line-height: 1.3;
     }
 
-    .closing a {
+    .album-page {
+      max-width: 1280px;
+      min-height: 70vh;
+      margin: auto;
+      padding: 30px 6% 100px;
+    }
+
+    .back-link {
       display: inline-block;
-      margin-top: 26px;
-      padding-bottom: 7px;
-      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
       color: var(--muted);
-      font-size: 9px;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
+    }
+
+    .album-heading {
+      padding: 55px 0 60px;
+      text-align: center;
+    }
+
+    .album-heading .eyebrow {
+      color: var(--muted);
+    }
+
+    .album-heading h1 {
+      font-size: clamp(52px, 7vw, 90px);
+    }
+
+    .album-heading h1:focus {
+      outline: none;
+    }
+
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 30px;
+    }
+
+    .photo {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: var(--soft);
+      cursor: zoom-in;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .photo:nth-child(even) {
+      margin-top: 65px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      transition: transform 600ms ease;
+    }
+
+    @media (hover: hover) {
+      .photo:hover img {
+        transform: scale(1.025);
+      }
+    }
+
+    .album-bottom {
+      padding-top: 60px;
+      text-align: center;
     }
 
     footer {
@@ -382,7 +468,7 @@
     }
 
     .footer-name {
-      color: var(--text);
+      color: var(--ink);
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -454,12 +540,18 @@
 
     .counter {
       position: absolute;
-      bottom: 25px;
+      bottom: 24px;
       left: 50%;
       margin: 0;
       transform: translateX(-50%);
       font-size: 10px;
       letter-spacing: 3px;
+    }
+
+    .noscript-note {
+      padding: 30px;
+      text-align: center;
+      line-height: 1.8;
     }
 
     @media (max-width: 800px) {
@@ -474,16 +566,12 @@
 
       .brand {
         align-items: flex-start;
-        text-align: left;
       }
 
       .brand-name {
         font-size: 11px;
         letter-spacing: 2px;
-      }
-
-      .brand-byline {
-        font-size: 12px;
+        text-align: left;
       }
 
       .navigation {
@@ -491,28 +579,23 @@
       }
 
       .hero {
-        min-height: 470px;
         margin: 0 14px;
       }
 
-      .gallery {
+      .collections {
         gap: 22px;
       }
 
-      .photo:nth-child(2) {
-        margin-top: 65px;
-      }
-
-      .photo:nth-child(5) {
-        margin-top: 50px;
+      .collection-card:nth-child(2) {
+        margin-top: 55px;
       }
 
       .about-inner {
-        gap: 40px;
+        gap: 35px;
       }
 
       .about-image {
-        height: 390px;
+        height: 380px;
       }
     }
 
@@ -526,6 +609,10 @@
         letter-spacing: 1.8px;
       }
 
+      .brand-byline {
+        font-size: 12px;
+      }
+
       .navigation {
         gap: 15px;
       }
@@ -536,7 +623,7 @@
       }
 
       .hero {
-        min-height: 480px;
+        min-height: 470px;
         height: 72svh;
       }
 
@@ -544,41 +631,34 @@
         font-size: clamp(46px, 12vw, 65px);
       }
 
-      .intro {
+      .collections-section {
         padding-top: 65px;
-        padding-bottom: 50px;
-      }
-
-      .gallery-section {
         padding-bottom: 65px;
       }
 
-      .gallery {
+      .section-intro {
+        margin-bottom: 35px;
+      }
+
+      .collections {
         grid-template-columns: 1fr;
-        gap: 22px;
       }
 
-      .gallery .photo:nth-child(n) {
+      .collections .collection-card:nth-child(n) {
         grid-column: auto;
-        width: 100%;
         aspect-ratio: 4 / 5;
-        margin: 0;
+        margin-top: 0;
       }
 
-      .gallery .photo:nth-child(3),
-      .gallery .photo:nth-child(6) {
-        aspect-ratio: 4 / 3;
+      .card-title {
+        font-size: 48px;
       }
 
       .about-inner {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 35px;
         padding-top: 45px;
-        padding-bottom: 45px;
-      }
-
-      .about-image {
-        height: 380px;
+        padding-bottom: 50px;
       }
 
       .about-copy {
@@ -586,7 +666,26 @@
       }
 
       .closing {
-        padding: 65px 24px;
+        padding: 60px 24px;
+      }
+
+      .album-page {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      .album-heading {
+        padding-top: 35px;
+        padding-bottom: 40px;
+      }
+
+      .album-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .photo:nth-child(even) {
+        margin-top: 0;
       }
 
       footer {
@@ -623,187 +722,141 @@
   <header class="site-header">
     <p class="header-note">Nature & travel</p>
 
-    <a class="brand" href="#top" aria-label="Field and Frame by Oliwia, home">
+    <a
+      class="brand"
+      href="#home"
+      aria-label="Field and Frame by Oliwia, home"
+    >
       <span class="brand-name">Field and Frame</span>
       <span class="brand-byline">by Oliwia</span>
     </a>
 
     <nav class="navigation" aria-label="Main navigation">
-      <a href="#gallery">Gallery</a>
+      <a href="#collections">Collections</a>
       <a href="#about">About</a>
     </nav>
   </header>
 
   <main>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <img
-        class="hero-image"
-        src="P1050807.jpeg"
-        alt="Nature photograph by Oliwia"
-        fetchpriority="high"
-        decoding="async"
-      >
+    <div id="home-view">
 
-      <div class="hero-content">
-        <p class="eyebrow">Nature & travel photography</p>
-
-        <h1 id="hero-title">
-          A little closer<br>
-          to nature.
-        </h1>
-
-        <p class="hero-description">
-          Places, light and small details.
-        </p>
-
-        <a class="button" href="#gallery">
-          View photographs
-        </a>
-      </div>
-    </section>
-
-    <section class="intro" aria-labelledby="intro-title">
-      <p class="eyebrow">Field and Frame</p>
-
-      <h2 id="intro-title">
-        Outside, with my camera.
-      </h2>
-
-      <p>
-        A few things I’ve seen along the way.
-      </p>
-    </section>
-
-    <section
-      class="gallery-section"
-      id="gallery"
-      aria-label="Photography gallery"
-    >
-      <div class="gallery">
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 1"
-        >
-          <img
-            src="P1050795.jpeg"
-            alt="Photograph by Oliwia, image 1"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 2"
-        >
-          <img
-            src="P1050810.jpeg"
-            alt="Photograph by Oliwia, image 2"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 3"
-        >
-          <img
-            src="P1050807.jpeg"
-            alt="Photograph by Oliwia, image 3"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 4"
-        >
-          <img
-            src="P1050811.jpeg"
-            alt="Photograph by Oliwia, image 4"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 5"
-        >
-          <img
-            src="P1050814.jpeg"
-            alt="Photograph by Oliwia, image 5"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-        <button
-          class="photo"
-          type="button"
-          aria-label="Open photograph 6"
-        >
-          <img
-            src="P1050840.jpeg"
-            alt="Photograph by Oliwia, image 6"
-            loading="lazy"
-            decoding="async"
-          >
-        </button>
-
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-inner">
-
+      <section class="hero" aria-labelledby="hero-title">
         <img
-          class="about-image"
-          src="P1050814.jpeg"
-          alt="Photograph from Oliwia’s nature collection"
-          loading="lazy"
+          class="hero-image"
+          src="P1050807.jpeg"
+          alt="Nature photograph by Oliwia"
+          fetchpriority="high"
           decoding="async"
         >
 
-        <div class="about-copy">
-          <p class="eyebrow">Behind the camera</p>
+        <div class="hero-content">
+          <p class="eyebrow">Nature & travel photography</p>
 
-          <h2>Hi, I’m Oliwia.</h2>
+          <h1 id="hero-title">
+            A little closer<br>
+            to nature.
+          </h1>
 
-          <p>
-            I study biology and love taking photos.
-            Mostly outdoors, often while travelling.
+          <p class="hero-description">
+            Places, light and small details.
           </p>
 
-          <p>
-            Field and Frame is a small collection
-            of my favourite moments.
-          </p>
+          <a class="button" href="#collections">
+            Explore collections
+          </a>
+        </div>
+      </section>
 
-          <span class="signature">Oliwia</span>
+      <section
+        class="collections-section"
+        id="collections"
+        aria-labelledby="collections-title"
+      >
+        <div class="section-intro">
+          <p class="eyebrow">Field and Frame</p>
+
+          <h2 id="collections-title">The collections.</h2>
+
+          <p class="section-description">
+            Choose a collection to see more.
+          </p>
         </div>
 
-      </div>
-    </section>
+        <div class="collections" id="collection-cards"></div>
 
-    <section class="closing" aria-label="Closing note">
-      <p>Thanks for looking around.</p>
-      <a href="#gallery">Back to the photographs</a>
+        <noscript>
+          <p class="noscript-note">
+            Please enable JavaScript to view the collections.
+          </p>
+        </noscript>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-inner">
+
+          <img
+            class="about-image"
+            src="P1050814.jpeg"
+            alt="Photograph from Oliwia’s collection"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <div class="about-copy">
+            <p class="eyebrow">Behind the camera</p>
+
+            <h2>Hi, I’m Oliwia.</h2>
+
+            <p>
+              I study biology and love taking photos.
+              Mostly outdoors, often while travelling.
+            </p>
+
+            <p>
+              These are a few of my favourite moments.
+            </p>
+
+            <span class="signature">Oliwia</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="closing" aria-label="Closing note">
+        <p>Thanks for looking around.</p>
+      </section>
+
+    </div>
+
+    <section
+      class="album-page"
+      id="album-view"
+      aria-labelledby="album-title"
+      hidden
+    >
+      <a class="back-link" href="#collections">
+        ← Back to collections
+      </a>
+
+      <div class="album-heading">
+        <p class="eyebrow">Field and Frame</p>
+        <h1 id="album-title" tabindex="-1"></h1>
+      </div>
+
+      <div class="album-grid" id="album-grid"></div>
+
+      <div class="album-bottom">
+        <a class="back-link" href="#collections">
+          ← Back to collections
+        </a>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <a class="footer-name" href="#top">
+    <a class="footer-name" href="#home">
       Field and Frame
     </a>
 
@@ -812,7 +865,7 @@
       All rights reserved.
     </span>
 
-    <a href="#top">Back to top ↑</a>
+    <a href="#home">Home ↑</a>
   </footer>
 
   <dialog
@@ -822,7 +875,7 @@
   >
     <button
       class="lightbox-control close"
-      id="close"
+      id="close-photo"
       type="button"
       aria-label="Close photograph"
       autofocus
@@ -830,7 +883,7 @@
 
     <button
       class="lightbox-control previous"
-      id="previous"
+      id="previous-photo"
       type="button"
       aria-label="Previous photograph"
     >‹</button>
@@ -843,68 +896,240 @@
 
     <button
       class="lightbox-control next"
-      id="next"
+      id="next-photo"
       type="button"
       aria-label="Next photograph"
     >›</button>
 
     <p
       class="counter"
-      id="counter"
+      id="photo-counter"
       aria-live="polite"
     ></p>
   </dialog>
 
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    /*
+      EDIT YOUR COLLECTIONS HERE.
 
-    const photos = Array.from(
-      document.querySelectorAll(".gallery .photo")
-    );
+      title: name displayed on the cover
+      cover: filename of the cover image
+      photos: filenames of the photographs in the collection
+
+      These categories and assignments are placeholders.
+      Keep the quotation marks and commas when editing.
+    */
+
+    const albums = [
+      {
+        id: "forests",
+        title: "Forests",
+        cover: "P1050807.jpeg",
+        photos: [
+          "P1050807.jpeg",
+          "P1050810.jpeg"
+        ]
+      },
+      {
+        id: "landscapes",
+        title: "Landscapes",
+        cover: "P1050795.jpeg",
+        photos: [
+          "P1050795.jpeg",
+          "P1050840.jpeg"
+        ]
+      },
+      {
+        id: "details",
+        title: "Details",
+        cover: "P1050811.jpeg",
+        photos: [
+          "P1050811.jpeg",
+          "P1050814.jpeg"
+        ]
+      }
+    ];
+
+    const homeView = document.getElementById("home-view");
+    const albumView = document.getElementById("album-view");
+    const albumTitle = document.getElementById("album-title");
+    const albumGrid = document.getElementById("album-grid");
+    const cards = document.getElementById("collection-cards");
 
     const lightbox = document.getElementById("lightbox");
     const largeImage = document.getElementById("lightbox-image");
-    const counter = document.getElementById("counter");
+    const counter = document.getElementById("photo-counter");
 
-    let currentIndex = 0;
+    let currentAlbum = null;
+    let currentPhotoIndex = 0;
+    let lastPhotoButton = null;
 
-    function showPhoto(index) {
-      currentIndex =
-        (index + photos.length) % photos.length;
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-      const image = photos[currentIndex].querySelector("img");
+    function createCollectionCards() {
+      albums.forEach((album) => {
+        const link = document.createElement("a");
+        link.className = "collection-card";
+        link.href = "#album/" + album.id;
+        link.setAttribute(
+          "aria-label",
+          "View " + album.title + " collection"
+        );
 
-      largeImage.src = image.currentSrc || image.src;
-      largeImage.alt = image.alt;
+        const image = document.createElement("img");
+        image.src = album.cover;
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
 
-      counter.textContent =
-        String(currentIndex + 1).padStart(2, "0") +
-        " / " +
-        String(photos.length).padStart(2, "0");
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        const title = document.createElement("h3");
+        title.className = "card-title";
+        title.textContent = album.title;
+
+        const label = document.createElement("span");
+        label.className = "card-link";
+        label.textContent = "View collection";
+
+        content.append(title, label);
+        link.append(image, content);
+        cards.append(link);
+      });
     }
 
-    photos.forEach((photo, index) => {
-      photo.addEventListener("click", () => {
-        showPhoto(index);
-        lightbox.showModal();
-        document.body.classList.add("modal-open");
-      });
-    });
+    function renderAlbum(album) {
+      currentAlbum = album;
+      albumTitle.textContent = album.title;
+      albumGrid.replaceChildren();
 
-    document.getElementById("close").addEventListener(
+      album.photos.forEach((filename, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "photo";
+        button.setAttribute(
+          "aria-label",
+          "Open " + album.title + " photograph " + (index + 1)
+        );
+
+        const image = document.createElement("img");
+        image.src = filename;
+        image.alt =
+          album.title + " — photograph " + (index + 1) +
+          " by Oliwia";
+        image.loading = index < 2 ? "eager" : "lazy";
+        image.decoding = "async";
+
+        button.append(image);
+
+        button.addEventListener("click", () => {
+          lastPhotoButton = button;
+          showPhoto(index);
+          lightbox.showModal();
+          document.body.classList.add("modal-open");
+        });
+
+        albumGrid.append(button);
+      });
+    }
+
+    function showPhoto(index) {
+      if (!currentAlbum || !currentAlbum.photos.length) return;
+
+      const photos = currentAlbum.photos;
+
+      currentPhotoIndex =
+        (index + photos.length) % photos.length;
+
+      largeImage.src = photos[currentPhotoIndex];
+      largeImage.alt =
+        currentAlbum.title + " — photograph " +
+        (currentPhotoIndex + 1) + " by Oliwia";
+
+      counter.textContent =
+        String(currentPhotoIndex + 1).padStart(2, "0") +
+        " / " +
+        String(photos.length).padStart(2, "0");
+
+      const singlePhoto = photos.length < 2;
+
+      document.getElementById("previous-photo").hidden =
+        singlePhoto;
+
+      document.getElementById("next-photo").hidden =
+        singlePhoto;
+    }
+
+    function updateView() {
+      if (lightbox.open) {
+        lightbox.close();
+      }
+
+      const hash = window.location.hash;
+      const album = albums.find(
+        (item) => hash === "#album/" + item.id
+      );
+
+      if (album) {
+        homeView.hidden = true;
+        albumView.hidden = false;
+
+        renderAlbum(album);
+
+        document.title =
+          album.title + " | Field and Frame";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "instant"
+        });
+
+        albumTitle.focus({
+          preventScroll: true
+        });
+
+        return;
+      }
+
+      homeView.hidden = false;
+      albumView.hidden = true;
+      currentAlbum = null;
+
+      document.title =
+        "Field and Frame | Photography by Oliwia";
+
+      requestAnimationFrame(() => {
+        if (hash === "#collections" || hash === "#about") {
+          const target = document.querySelector(hash);
+
+          target.scrollIntoView({
+            behavior: "instant",
+            block: "start"
+          });
+        } else {
+          window.scrollTo({
+            top: 0,
+            behavior: "instant"
+          });
+        }
+      });
+    }
+
+    document.getElementById("close-photo").addEventListener(
       "click",
       () => lightbox.close()
     );
 
-    document.getElementById("previous").addEventListener(
+    document.getElementById("previous-photo").addEventListener(
       "click",
-      () => showPhoto(currentIndex - 1)
+      () => showPhoto(currentPhotoIndex - 1)
     );
 
-    document.getElementById("next").addEventListener(
+    document.getElementById("next-photo").addEventListener(
       "click",
-      () => showPhoto(currentIndex + 1)
+      () => showPhoto(currentPhotoIndex + 1)
     );
 
     lightbox.addEventListener("click", (event) => {
@@ -915,6 +1140,16 @@
 
     lightbox.addEventListener("close", () => {
       document.body.classList.remove("modal-open");
+
+      if (
+        lastPhotoButton &&
+        lastPhotoButton.isConnected &&
+        !albumView.hidden
+      ) {
+        lastPhotoButton.focus({
+          preventScroll: true
+        });
+      }
     });
 
     document.addEventListener("keydown", (event) => {
@@ -922,14 +1157,19 @@
 
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        showPhoto(currentIndex + 1);
+        showPhoto(currentPhotoIndex + 1);
       }
 
       if (event.key === "ArrowLeft") {
         event.preventDefault();
-        showPhoto(currentIndex - 1);
+        showPhoto(currentPhotoIndex - 1);
       }
     });
+
+    window.addEventListener("hashchange", updateView);
+
+    createCollectionCards();
+    updateView();
   </script>
 
 </body>
