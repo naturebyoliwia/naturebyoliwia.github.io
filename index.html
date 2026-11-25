@@ -263,14 +263,8 @@
       isolation: isolate;
     }
 
-    .collection-card:nth-child(2) {
+    .collection-card:nth-child(even) {
       margin-top: 85px;
-    }
-
-    .collection-card:nth-child(3) {
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 8;
-      margin-top: 15px;
     }
 
     .collection-card img {
@@ -300,7 +294,7 @@
 
     .card-title {
       margin: 0;
-      font-size: clamp(38px, 4.6vw, 68px);
+      font-size: clamp(34px, 4.2vw, 62px);
       letter-spacing: -0.04em;
       line-height: 1.1;
     }
@@ -408,7 +402,7 @@
     }
 
     .album-heading h1 {
-      font-size: clamp(52px, 7vw, 90px);
+      font-size: clamp(46px, 7vw, 90px);
     }
 
     .album-heading h1:focus {
@@ -586,7 +580,7 @@
         gap: 22px;
       }
 
-      .collection-card:nth-child(2) {
+      .collection-card:nth-child(even) {
         margin-top: 55px;
       }
 
@@ -651,7 +645,7 @@
       }
 
       .card-title {
-        font-size: 48px;
+        font-size: 42px;
       }
 
       .about-inner {
@@ -912,12 +906,14 @@
     /*
       EDIT YOUR COLLECTIONS HERE.
 
-      title: name displayed on the cover
+      Each collection needs:
+      id: short name for the link, without spaces
+      title: name shown on the cover
       cover: filename of the cover image
       photos: filenames of the photographs in the collection
 
-      These categories and assignments are placeholders.
-      Keep the quotation marks and commas when editing.
+      Add new collections BEFORE the closing ];
+      Put a comma after every collection except the last one.
     */
 
     const albums = [
@@ -940,24 +936,25 @@
         ]
       },
       {
-        id: "details",
-        title: "botanical garden munich",
+        id: "botanical-garden-munich",
+        title: "Botanical Garden Munich",
         cover: "P1050811.jpeg",
         photos: [
           "P1050811.jpeg",
           "P1050814.jpeg"
         ]
-      }
-    ];
- {
+      },
+      {
         id: "hiking",
-        title: "hiking",
+        title: "Hiking",
         cover: "P1050807.jpeg",
         photos: [
           "P1050807.jpeg",
           "P1050810.jpeg"
         ]
-      },
+      }
+    ];
+
     const homeView = document.getElementById("home-view");
     const albumView = document.getElementById("album-view");
     const albumTitle = document.getElementById("album-title");
