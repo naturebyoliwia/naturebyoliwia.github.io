@@ -11,37 +11,18 @@
     content="Field and Frame — nature and travel photography by Oliwia."
   >
 
-  <meta name="theme-color" content="#ffffff">
-    .brand-name {
-      color: #2f5d3a;
-      font-size: 13px;
-      letter-spacing: 4px;
-    }
-
-    .brand-byline {
-      color: #6f8f6a;
-    }
-
-    .header-note,
-    .navigation a {
-      color: #4f7a55;
-    }
-
-    .navigation a:hover {
-      color: #2f5d3a;
-    }
-
-    .site-header {
-      border-bottom: 1px solid #dfe8dc;
-    }
+  <meta name="theme-color" content="#f4f7ef">
 
   <style>
     :root {
       --white: #ffffff;
-      --soft: #f5f5f1;
-      --ink: #30372f;
-      --muted: #6c7369;
-      --line: #e3e6df;
+      --paper: #f4f7ef;
+      --soft: #e8efe1;
+      --ink: #1f3a2a;
+      --green: #2f5d3a;
+      --sage: #6f8f6a;
+      --muted: #5f7566;
+      --line: #d5e0cd;
       --serif: Georgia, "Times New Roman", serif;
       --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -61,7 +42,7 @@
 
     body {
       margin: 0;
-      background: var(--white);
+      background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
@@ -87,12 +68,12 @@
 
     a:focus-visible,
     button:focus-visible {
-      outline: 3px solid #8a9a7c;
+      outline: 3px solid var(--sage);
       outline-offset: 6px;
     }
 
     ::selection {
-      background: #dfe5d8;
+      background: #cfe0c4;
     }
 
     .site-header {
@@ -102,14 +83,14 @@
       gap: 24px;
       max-width: 1600px;
       margin: auto;
-      padding: 28px 5%;
+      padding: 30px 5% 26px;
     }
 
     .header-note {
       margin: 0;
-      color: var(--muted);
+      color: var(--sage);
       font-size: 9px;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
@@ -121,36 +102,40 @@
     }
 
     .brand-name {
-      font-size: 12px;
+      color: var(--green);
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       line-height: 1.5;
       text-align: center;
       text-transform: uppercase;
     }
 
     .brand-byline {
-      color: var(--muted);
+      color: var(--sage);
       font-family: var(--serif);
-      font-size: 13px;
+      font-size: 14px;
       font-style: italic;
     }
 
     .navigation {
       display: flex;
       justify-content: flex-end;
-      gap: 25px;
+      gap: 26px;
     }
 
     .navigation a {
-      color: var(--muted);
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
+      color: var(--green);
       font-size: 9px;
-      letter-spacing: 1.6px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      transition: border-color 200ms ease;
     }
 
     .navigation a:hover {
-      color: var(--ink);
+      border-bottom-color: var(--green);
     }
 
     .hero {
@@ -163,7 +148,8 @@
       max-height: 900px;
       margin: 0 22px;
       overflow: hidden;
-      background: #74806e;
+      border-radius: 6px;
+      background: #5d7a58;
       color: white;
       text-align: center;
     }
@@ -179,7 +165,12 @@
       position: absolute;
       inset: 0;
       content: "";
-      background: rgba(15, 25, 17, 0.35);
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(20, 45, 28, 0.25),
+          rgba(20, 45, 28, 0.5)
+        );
     }
 
     .hero-content {
@@ -191,7 +182,7 @@
     .eyebrow {
       margin: 0 0 22px;
       font-size: 9px;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       line-height: 1.8;
       text-transform: uppercase;
     }
@@ -205,31 +196,29 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(48px, 6.8vw, 100px);
-      letter-spacing: -0.05em;
-      line-height: 1.04;
+      font-size: clamp(46px, 6.8vw, 96px);
+      letter-spacing: -0.04em;
+      line-height: 1.06;
     }
 
-    .hero-description {
-      margin: 24px 0 30px;
-      font-size: 12px;
-      line-height: 1.8;
-      letter-spacing: 0.4px;
+    .hero h1 {
+      margin-bottom: 34px;
     }
 
     .button {
       display: inline-block;
-      padding: 15px 24px;
+      padding: 15px 28px;
       border: 1px solid white;
+      border-radius: 40px;
       background: white;
-      color: var(--ink);
+      color: var(--green);
       font-size: 9px;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       line-height: 1.4;
       text-transform: uppercase;
       transition:
-        background 180ms ease,
-        color 180ms ease;
+        background 200ms ease,
+        color 200ms ease;
     }
 
     .button:hover {
@@ -240,7 +229,7 @@
     .collections-section {
       max-width: 1240px;
       margin: auto;
-      padding: 90px 6% 110px;
+      padding: 95px 6% 110px;
     }
 
     .section-intro {
@@ -249,13 +238,14 @@
     }
 
     .section-intro .eyebrow {
-      color: var(--muted);
+      color: var(--sage);
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(36px, 4.5vw, 60px);
-      letter-spacing: -0.045em;
+      color: var(--green);
+      font-size: clamp(36px, 4.5vw, 58px);
+      letter-spacing: -0.04em;
       line-height: 1.15;
     }
 
@@ -279,14 +269,21 @@
       place-items: center;
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      background: #727d6d;
+      border-radius: 6px;
+      background: #5d7a58;
       color: white;
       text-align: center;
       isolation: isolate;
     }
 
-    .collection-card:nth-child(even) {
+    .collection-card:nth-child(2) {
       margin-top: 85px;
+    }
+
+    .collection-card:nth-child(3) {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 8;
+      margin-top: 15px;
     }
 
     .collection-card img {
@@ -303,7 +300,7 @@
       inset: 0;
       z-index: -1;
       content: "";
-      background: rgba(10, 21, 13, 0.33);
+      background: rgba(20, 45, 28, 0.38);
       transition: background 300ms ease;
     }
 
@@ -316,7 +313,7 @@
 
     .card-title {
       margin: 0;
-      font-size: clamp(34px, 4.2vw, 62px);
+      font-size: clamp(36px, 4.4vw, 64px);
       letter-spacing: -0.04em;
       line-height: 1.1;
     }
@@ -324,9 +321,9 @@
     .card-link {
       margin-top: 22px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
       font-size: 9px;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
     }
 
@@ -336,7 +333,7 @@
       }
 
       .collection-card:hover::after {
-        background: rgba(10, 21, 13, 0.22);
+        background: rgba(20, 45, 28, 0.25);
       }
     }
 
@@ -351,11 +348,12 @@
       gap: 75px;
       max-width: 1100px;
       margin: auto;
-      padding: 80px 6%;
+      padding: 85px 6%;
     }
 
     .about-image {
       height: 450px;
+      border-radius: 6px;
       object-fit: cover;
     }
 
@@ -364,11 +362,11 @@
     }
 
     .about-copy .eyebrow {
-      color: var(--muted);
+      color: var(--sage);
     }
 
     .about-copy h2 {
-      font-size: clamp(38px, 4vw, 54px);
+      font-size: clamp(38px, 4vw, 52px);
     }
 
     .about-copy p:not(.eyebrow) {
@@ -381,21 +379,33 @@
     .signature {
       display: block;
       margin-top: 30px;
+      color: var(--green);
       font-family: var(--serif);
       font-size: 32px;
       font-style: italic;
     }
 
     .closing {
-      padding: 80px 24px;
+      padding: 85px 24px;
       text-align: center;
     }
 
     .closing p {
       margin: 0;
+      color: var(--green);
       font-family: var(--serif);
-      font-size: clamp(26px, 3vw, 39px);
-      letter-spacing: -0.03em;
+      font-size: clamp(26px, 3vw, 38px);
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+
+    .closing::before {
+      display: block;
+      width: 40px;
+      height: 1px;
+      margin: 0 auto 28px;
+      content: "";
+      background: var(--sage);
     }
 
     .album-page {
@@ -408,9 +418,9 @@
     .back-link {
       display: inline-block;
       padding: 10px 0;
-      color: var(--muted);
+      color: var(--green);
       font-size: 10px;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
     }
 
@@ -420,11 +430,12 @@
     }
 
     .album-heading .eyebrow {
-      color: var(--muted);
+      color: var(--sage);
     }
 
     .album-heading h1 {
-      font-size: clamp(46px, 7vw, 90px);
+      color: var(--green);
+      font-size: clamp(52px, 7vw, 88px);
     }
 
     .album-heading h1:focus {
@@ -443,6 +454,7 @@
       margin: 0;
       padding: 0;
       border: 0;
+      border-radius: 6px;
       background: var(--soft);
       cursor: zoom-in;
       overflow: hidden;
@@ -484,9 +496,9 @@
     }
 
     .footer-name {
-      color: var(--ink);
+      color: var(--green);
       font-size: 9px;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
@@ -499,12 +511,12 @@
       margin: 0;
       padding: 0;
       border: 0;
-      background: #131713;
+      background: #142319;
       color: white;
     }
 
     .lightbox::backdrop {
-      background: #131713;
+      background: #142319;
     }
 
     .lightbox[open] {
@@ -533,7 +545,7 @@
       padding: 0;
       border: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: 50%;
-      background: rgba(19, 23, 19, 0.8);
+      background: rgba(20, 35, 25, 0.8);
       color: white;
       cursor: pointer;
       font-size: 28px;
@@ -586,7 +598,7 @@
 
       .brand-name {
         font-size: 11px;
-        letter-spacing: 2px;
+        letter-spacing: 2.5px;
         text-align: left;
       }
 
@@ -602,7 +614,7 @@
         gap: 22px;
       }
 
-      .collection-card:nth-child(even) {
+      .collection-card:nth-child(2) {
         margin-top: 55px;
       }
 
@@ -622,7 +634,7 @@
 
       .brand-name {
         font-size: 10px;
-        letter-spacing: 1.8px;
+        letter-spacing: 2px;
       }
 
       .brand-byline {
@@ -635,7 +647,7 @@
 
       .navigation a {
         font-size: 8px;
-        letter-spacing: 1px;
+        letter-spacing: 1.2px;
       }
 
       .hero {
@@ -644,7 +656,7 @@
       }
 
       h1 {
-        font-size: clamp(46px, 12vw, 65px);
+        font-size: clamp(44px, 12vw, 64px);
       }
 
       .collections-section {
@@ -667,7 +679,7 @@
       }
 
       .card-title {
-        font-size: 42px;
+        font-size: 46px;
       }
 
       .about-inner {
@@ -736,7 +748,7 @@
 <body id="top">
 
   <header class="site-header">
-    <p class="header-note">Nature & travel</p>
+    <p class="header-note">Nature &amp; travel</p>
 
     <a
       class="brand"
@@ -767,16 +779,9 @@
         >
 
         <div class="hero-content">
-          <p class="eyebrow">Nature & travel photography</p>
+          <p class="eyebrow">Nature &amp; travel photography</p>
 
-          <h1 id="hero-title">
-            A little closer<br>
-            to nature.
-          </h1>
-
-          <p class="hero-description">
-            Places, light and small details.
-          </p>
+          <h1 id="hero-title">Field and Frame</h1>
 
           <a class="button" href="#collections">
             Explore collections
@@ -925,21 +930,7 @@
   </dialog>
 
   <script>
-    /*
-      EDIT YOUR COLLECTIONS HERE.
-
-      Each collection needs:
-      id: short name for the link, without spaces
-      title: name shown on the cover
-      cover: filename of the cover image
-      photos: filenames of the photographs in the collection
-
-      Add new collections BEFORE the closing ];
-      Put a comma after every collection except the last one.
-    */
-
-       const albums = [
-      
+    const albums = [
       {
         id: "botanical-garden-munich",
         title: "Botanical Garden Munich",
@@ -947,8 +938,7 @@
         photos: [
           "botanical-garden-munich/P1050810.jpeg",
           "botanical-garden-munich/P1050811.jpeg",
-          "botanical-garden-munich/P1050824.jpeg",
-          "botanical-garden-munich/IMG_9756.jpeg"
+          "botanical-garden-munich/P1050824.jpeg"
         ]
       },
       {
