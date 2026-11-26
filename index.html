@@ -12,6 +12,28 @@
   >
 
   <meta name="theme-color" content="#ffffff">
+    .brand-name {
+      color: #2f5d3a;
+      font-size: 13px;
+      letter-spacing: 4px;
+    }
+
+    .brand-byline {
+      color: #6f8f6a;
+    }
+
+    .header-note,
+    .navigation a {
+      color: #4f7a55;
+    }
+
+    .navigation a:hover {
+      color: #2f5d3a;
+    }
+
+    .site-header {
+      border-bottom: 1px solid #dfe8dc;
+    }
 
   <style>
     :root {
@@ -916,41 +938,36 @@
       Put a comma after every collection except the last one.
     */
 
-    const albums = [
-      {
-        id: "forests",
-        title: "Forests",
-        cover: "P1050807.jpeg",
-        photos: [
-          "P1050807.jpeg",
-          "P1050810.jpeg"
-        ]
-      },
-      {
-        id: "landscapes",
-        title: "Landscapes",
-        cover: "P1050795.jpeg",
-        photos: [
-          "P1050795.jpeg",
-          "P1050840.jpeg"
-        ]
-      },
+       const albums = [
+      
       {
         id: "botanical-garden-munich",
         title: "Botanical Garden Munich",
-        cover: "P1050811.jpeg",
+        cover: "botanical-garden-munich/P1050811.jpeg",
         photos: [
-          "P1050811.jpeg",
-          "P1050814.jpeg"
+          "botanical-garden-munich/P1050810.jpeg",
+          "botanical-garden-munich/P1050811.jpeg",
+          "botanical-garden-munich/P1050824.jpeg",
+          "botanical-garden-munich/IMG_9756.jpeg"
+        ]
+      },
+      {
+        id: "wroclaw",
+        title: "Wrocław",
+        cover: "wroclaw/P1050767.jpeg",
+        photos: [
+          "wroclaw/P1050767.jpeg",
+          "wroclaw/FullSizeRender.jpeg",
+          "wroclaw/SCRL_0010.jpeg"
         ]
       },
       {
         id: "hiking",
         title: "Hiking",
-        cover: "P1050807.jpeg",
+        cover: "hiking/P1050731.jpeg",
         photos: [
-          "P1050807.jpeg",
-          "P1050810.jpeg"
+          "hiking/P1050731.jpeg",
+          "hiking/P1050807.jpeg"
         ]
       }
     ];
